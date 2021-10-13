@@ -1,0 +1,95 @@
+html{
+    /* background: linear-gradient(
+        to right,rgb(7, 7, 77),rgb(37, 37, 59),rgb(47, 47, 49)
+    ); */
+    background-color: rgba(128, 128, 128, 0.719);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header{
+    background-color: rgba(240, 230, 140, 0.657);
+    padding: 0.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botonLogin{
+    background-color: rgba(209, 197, 33, 0.719);
+    padding: 1em;
+    margin-left: 2em;
+    font-size: 1.3rem;
+}
+
+.botonLogin:hover{
+    color: black;
+    text-decoration: black underline;
+}
+
+.listaSecciones{
+    background-color: rgba(209, 197, 33, 0.719);
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.5rem;
+}
+
+.listaNoticias{
+    list-style: none;
+    margin-top: 2em;
+}
+
+.forms{
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    margin: 4em;
+    padding: 3em;
+    background-color:rgba(90, 88, 88, 0.664) ;
+    border: 3px solid black;
+}
+
+.formSeccion{
+    width: 34%;
+}
+
+.formNoticia{
+    width: 63%;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(32, 104, 128);
+    text-decoration: underline black;
+}
+
+
+.noticiaPorSeccion{
+    margin-top: 4em;
+}
+
+.botonVolver{
+    margin-top: 6em;
+    margin-left: 0.2em;
+    font-size: 1.3rem;
+    padding: 0.3em;
+    background-color: beige;
+}
+
+a .botonBorrar{
+    color:white;
+}
+
+.loginForm{
+    background-color: rgba(240, 230, 140, 0.657);
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+    align-items: center;
+    margin: 1em;
+}
+
