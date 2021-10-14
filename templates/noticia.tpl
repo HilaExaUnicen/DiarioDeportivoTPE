@@ -10,10 +10,8 @@
 <body>
     <header>
         <h1>Diario deportivo TUDAI</h1>
-        <nav>
-            <a class="botonLogin" href="login">Login</a>
-        </nav>
     </header>
+    
     <h1>{$noticia->titulo}</h1>
     <h4>{$noticia->descripcion}</h4>
     <p>{$noticia->cuerpo}</p>

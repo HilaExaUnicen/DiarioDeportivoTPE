@@ -44,8 +44,8 @@ class NewsController{
     function deleteSeccion($idSeccion){
         $this->loginHelper->checkLoggedin();
         try{
-        $this->model->deleteSeccionFromDB($idSeccion);
-        $this->view->showHomeLocation();
+            $this->model->deleteSeccionFromDB($idSeccion);
+            $this->view->showHomeLocation();
         }
         catch(Exception $e){
             echo "No se puede borrar la seccion porque tiene noticias";

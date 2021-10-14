@@ -10,9 +10,6 @@
 <body>
     <header>
         <h1>Diario deportivo TUDAI</h1>
-        <nav>
-            <a class="botonLogin" href="login">Login</a>
-        </nav>
     </header>
 
         {foreach from=$noticias item=noticia}
