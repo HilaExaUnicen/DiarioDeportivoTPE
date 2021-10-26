@@ -1,6 +1,7 @@
 <?php
 
 require_once "Controller/NewsController.php";
+require_once "Controller/SectionController.php";
 require_once "Controller/LoginController.php";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -15,6 +16,7 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
     $params = explode('/', $action);
 
     $newsController = new NewsController();
+    $sectionController = new SectionController();
     $loginController = new LoginController();
 
     switch ($params[0]){
@@ -23,7 +25,7 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
             break;
         }
         case 'viewSeccion':{
-            $newsController->viewSeccion($params[1]);
+            $sectionController->viewSeccion($params[1]);
             break;
         }
         case 'viewNoticia':{
@@ -35,11 +37,11 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
             break;
         }
         case 'deleteSeccion':{
-            $newsController->deleteSeccion($params[1]);
+            $sectionController->deleteSeccion($params[1]);
             break;
         }
         case 'addSeccion':{
-            $newsController->addSeccion();
+            $sectionController->addSeccion();
             break;
         }
         case 'addNoticia':{
@@ -47,7 +49,7 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
             break;
         }
         case 'updateSeccion':{
-            $newsController->updateSeccion();
+            $sectionController->updateSeccion();
             break;
         }
         case 'updateNoticia':{
