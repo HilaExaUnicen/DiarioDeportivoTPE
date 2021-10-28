@@ -9,12 +9,7 @@ class NewsModel{
         $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe;charset=utf8','root','');
     }
 
-    function getNoticiasConSeccion(){
-        $sentencia = $this->db->prepare("SELECT * FROM noticias JOIN secciones ON noticias.id_seccionfk = secciones.id_seccion");
-        $sentencia->execute();
-        $tablaCompleta = $sentencia->fetchAll(PDO::FETCH_OBJ);
-        return $tablaCompleta;
-    }
+
 
     function viewNoticia($id){
         $sentencia = $this->db->prepare("SELECT * FROM noticias WHERE id_noticia=?");
@@ -26,6 +21,7 @@ class NewsModel{
     function insertNoticia($titulo, $descripcion, $cuerpo, $seccion){
         $sentencia = $this->db->prepare("INSERT INTO noticias(titulo,descripcion,cuerpo,id_seccionfk) VALUE(?,?,?,?)");
         $sentencia->execute(array($titulo, $descripcion, $cuerpo, $seccion));
+        return $this->db->lastInsertId();
     }
 
     function deleteNoticiaFromDB($idNoticia){
@@ -37,5 +33,13 @@ class NewsModel{
         $sentencia = $this->db->prepare("UPDATE noticias SET titulo=?, descripcion=?, cuerpo=? WHERE id_noticia=?");
         $sentencia->execute(array($titulo, $descripcion, $cuerpo, $idNoticia));
     }
+
+    function getNoticiasConSeccion(){
+        $sentencia = $this->db->prepare("SELECT * FROM noticias JOIN secciones ON noticias.id_seccionfk = secciones.id_seccion");
+        $sentencia->execute();
+        $tablaCompleta = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $tablaCompleta;
+    }
+
     
 }

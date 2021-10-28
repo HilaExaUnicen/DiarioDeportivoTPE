@@ -24,9 +24,12 @@ class LoginController{
         if(!empty($_POST['nuevoEmail']) && !empty($_POST['nuevaContraseña'])){
             $userEmail = $_POST['nuevoEmail'];
             $userContraseña = password_hash($_POST['nuevaContraseña'], PASSWORD_BCRYPT);
-
             $this->model->insertarUsuario($userEmail, $userContraseña);
+            //agregue que inicie sesion despues del registro    
+            session_start();
+            $_SESSION['email'] = $userEmail;
             $this->view->showHomeLocation();
+            
         }
     }
 
