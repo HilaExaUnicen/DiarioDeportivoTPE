@@ -11,7 +11,7 @@
     <header>
         <h1>Diario deportivo TUDAI</h1>
         <nav>
-            {if $usuario==true}
+            {if $rol=="admin" || $rol=="usuario"}
                 <a class="botonLogin" href="logout">Logout</a>
             {else}
                 <a class="botonLogin" href="login">Login</a>
@@ -26,9 +26,11 @@
        <section class="listaSecciones">
             <ul>
                 {foreach from=$secciones item=seccion}
+                            {if $rol=="admin"}
                             <li><a href="viewSeccion/{$seccion->id_seccion}">{$seccion->secciones}</a> 
-                            {if $usuario==true}
                             -  <a href="deleteSeccion/{$seccion->id_seccion}">Borrar</a>
+                            {elseif $rol=="usuario" || $rol=="invitado"}
+                                <li><a href="viewSeccion/{$seccion->id_seccion}">{$seccion->secciones}</a> 
                             {/if}
                 {/foreach}
             </ul>
@@ -36,7 +38,7 @@
 
         <section class="sectionNoticias">
                 {foreach from=$tablaCompleta item=tabla}
-                        {if $usuario==true}
+                        {if $rol=="admin"}
                             <ul class="listaNoticias">
                                 <li><h3>{$tabla->secciones} - <a href="viewNoticia/{$tabla->id_noticia}">{$tabla->titulo|truncate:100}</a> --- 
                                 <a href="deleteNoticia/{$tabla->id_noticia}">Borrar</a></h3></li>
@@ -59,7 +61,7 @@
         
     
         
-    {if $usuario==true}
+    {if $rol=="admin"}
         {include file="CRUDforms.tpl"}
     {/if}
 

@@ -3,21 +3,24 @@
 
 class LoginHelper{
 
-    function checkLoggedin(){
+    function checkAdminLoggedin(){
         session_start();
-        if(!isset($_SESSION['email'])){
+        if($_SESSION['admin'] != 1){
             header("Location:".BASE_URL."login");
             die();
         }
     }
 
-    function checkAdmin(){
+    function checkRole(){
         session_start();
-        if(isset($_SESSION['email'])){
-            $log = true;
+        if(isset($_SESSION['email']) && $_SESSION['admin'] == 1){
+            $log = "admin";
         }
-        else {
-            $log = false;
+        elseif (isset($_SESSION['email']) && ($_SESSION['admin'] != 1)){
+            $log = "usuario";
+        }
+        else{
+            $log = "invitado";
         }
         
         return $log;

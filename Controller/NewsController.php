@@ -24,9 +24,9 @@ class NewsController{
     function showHome(){
         $tablaCompleta = $this->model->getNoticiasConSeccion();
         $secciones = $this->sectionModel->getSecciones();
-        $usuario = $this->loginHelper->checkAdmin();
+        $rol = $this->loginHelper->checkRole();
         
-        $this->view->listarNoticias($tablaCompleta, $secciones, $usuario);
+        $this->view->listarNoticias($tablaCompleta, $secciones, $rol);
     }
     
     function viewNoticia($id){
@@ -35,19 +35,19 @@ class NewsController{
     }
 
     function deleteNoticia($idNoticia){
-        $this->loginHelper->checkLoggedin();
+        $this->loginHelper->checkAdminLoggedin();
         $this->model->deleteNoticiaFromDB($idNoticia);
         $this->view->showHomeLocation();
     }
 
     function addNoticia(){
-        $this->loginHelper->checkLoggedin();
+        $this->loginHelper->checkAdminLoggedin();
         $this->model->insertNoticia($_POST['titulo'],$_POST['descripcion'],$_POST['cuerpo'],$_POST['seccion']);
         $this->view->showHomeLocation();
     }
 
     function updateNoticia(){
-        $this->loginHelper->checkLoggedin();
+        $this->loginHelper->checkAdminLoggedin();
         $this->model->updateNoticiaFromDB($_POST['titulo'],$_POST['descripcion'],$_POST['cuerpo'],$_POST['noticia']);
         $this->view->showHomeLocation();
     }

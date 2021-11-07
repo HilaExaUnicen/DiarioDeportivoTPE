@@ -10,10 +10,10 @@ class NewsView{
         $this->smarty = new Smarty();
     }
 
-    function listarNoticias($tablaCompleta, $secciones, $usuario){
+    function listarNoticias($tablaCompleta, $secciones, $rol){
         $this->smarty->assign('tablaCompleta', $tablaCompleta);
         $this->smarty->assign('secciones', $secciones);
-        $this->smarty->assign('usuario', $usuario);
+        $this->smarty->assign('rol', $rol);
         $this->smarty->display("templates/index.tpl");
     }
 

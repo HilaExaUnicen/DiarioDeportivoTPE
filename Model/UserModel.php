@@ -21,5 +21,11 @@ class UserModel{
         return $user;
     }
 
+    function getAdmin(){
+        $sentencia = $this->db->prepare("SELECT email FROM usuarios WHERE rol=1");
+        $sentencia->execute();
+        $admin = $sentencia->fetch(PDO::FETCH_OBJ);
+        return $admin;
+    }
 
 }

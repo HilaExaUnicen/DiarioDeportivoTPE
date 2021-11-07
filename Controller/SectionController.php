@@ -22,13 +22,13 @@ class SectionController{
     }
 
     function addSeccion(){
-        $this->loginHelper->checkLoggedin();
+        $this->loginHelper->checkAdminLoggedin();
         $this->model->insertSeccion($_POST['seccion']);
         $this->view->showHomeLocation();
     }
 
     function deleteSeccion($idSeccion){
-        $this->loginHelper->checkLoggedin();
+        $this->loginHelper->checkAdminLoggedin();
         try{
             $this->model->deleteSeccionFromDB($idSeccion);
             $this->view->showHomeLocation();
@@ -39,7 +39,7 @@ class SectionController{
     }
 
     function updateSeccion(){
-        $this->loginHelper->checkLoggedin();
+        $this->loginHelper->checkAdminLoggedin();
         $this->model->updateSeccionFromDB($_POST['inputSeccion'], $_POST['selectSeccion']);
         $this->view->showHomeLocation();
     }

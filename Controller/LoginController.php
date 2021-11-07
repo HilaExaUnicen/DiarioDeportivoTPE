@@ -24,10 +24,13 @@ class LoginController{
         if(!empty($_POST['nuevoEmail']) && !empty($_POST['nuevaContraseña'])){
             $userEmail = $_POST['nuevoEmail'];
             $userContraseña = password_hash($_POST['nuevaContraseña'], PASSWORD_BCRYPT);
+            
             $this->model->insertarUsuario($userEmail, $userContraseña);
-            //agregue que inicie sesion despues del registro    
+            $user = $this->model->getUser($userEmail);
+            
             session_start();
             $_SESSION['email'] = $userEmail;
+            $_SESSION['admin'] = $user->rol;
             $this->view->showHomeLocation();
             
         }
@@ -37,14 +40,15 @@ class LoginController{
         if (!empty($_POST['email']) && !empty($_POST['contraseña'])) {
             $email = $_POST['email'];
             $contraseña = $_POST['contraseña'];
-     
+            
             $user = $this->model->getUser($email);
      
             if ($user && password_verify($contraseña, $user->contraseña)) {
 
                 session_start();
                 $_SESSION['email'] = $email;
-                $_SESSION['admin'] = 1;
+                $_SESSION['admin'] = $user->rol;
+
                 $this->view->showHomeLocation();
             
             } 
@@ -53,6 +57,8 @@ class LoginController{
             }
         }
     }
+
+
 
     function logout(){
         session_start();
