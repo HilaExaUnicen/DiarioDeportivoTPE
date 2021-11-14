@@ -3,6 +3,7 @@
 require_once "Controller/NewsController.php";
 require_once "Controller/SectionController.php";
 require_once "Controller/LoginController.php";
+require_once "Controller/AdminController.php";
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -18,6 +19,7 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
     $newsController = new NewsController();
     $sectionController = new SectionController();
     $loginController = new LoginController();
+    $adminController = new AdminController();
 
     switch ($params[0]){
         case 'home':{
@@ -66,6 +68,22 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
         }
         case 'logout':{
             $loginController->logout();
+            break;
+        }
+        case 'adminView':{
+            $adminController->showAdmin();
+            break;
+        }
+        case 'deleteUser':{
+            $adminController->deleteUser($params[1]);
+            break;
+        }
+        case 'giveAdmin':{
+            $adminController->addAdmin($params[1]);
+            break;
+        }
+        case 'removeAdmin':{
+            $adminController->removeAdmin($params[1]);
             break;
         }
         case 'register':{

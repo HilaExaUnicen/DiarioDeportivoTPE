@@ -11,7 +11,9 @@
     <header>
         <h1>Diario deportivo TUDAI</h1>
         <nav>
-            {if $rol=="admin" || $rol=="usuario"}
+            {if $rol=="admin"}
+                <a class="botonLogin" href="logout">Logout</a><a class="botonLogin" href="adminView">Admin</a>
+            {elseif $rol=="usuario"}
                 <a class="botonLogin" href="logout">Logout</a>
             {else}
                 <a class="botonLogin" href="login">Login</a>
@@ -29,7 +31,7 @@
                             {if $rol=="admin"}
                             <li><a href="viewSeccion/{$seccion->id_seccion}">{$seccion->secciones}</a> 
                             -  <a href="deleteSeccion/{$seccion->id_seccion}">Borrar</a>
-                            {elseif $rol=="usuario" || $rol=="invitado"}
+                            {else}
                                 <li><a href="viewSeccion/{$seccion->id_seccion}">{$seccion->secciones}</a> 
                             {/if}
                 {/foreach}
