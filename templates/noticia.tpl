@@ -15,7 +15,13 @@
     <h1>{$noticia->titulo}</h1>
     <h4>{$noticia->descripcion}</h4>
     <p>{$noticia->cuerpo}</p>
+    <div class="comentarios">
+        <input type="text">
+        <button id="postearComentario">Postear comentario</button>
+        
+        <a class="botonVolver" href="{BASE_URL}home">Volver</a>
+    </div>
 
-    <a class="botonVolver" href="{BASE_URL}home">Volver</a>
+   
 </body>
 </html>
