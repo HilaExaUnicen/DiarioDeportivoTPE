@@ -14,16 +14,16 @@ class LoginHelper{
     function checkRole(){
         session_start();
         if(isset($_SESSION['email']) && $_SESSION['admin'] == 1){
-            $log = "admin";
+            $rol = "admin";
         }
         elseif (isset($_SESSION['email']) && ($_SESSION['admin'] != 1)){
-            $log = "usuario";
+            $rol = "usuario";
         }
         else{
-            $log = "invitado";
+            $rol = "invitado";
         }
         
-        return $log;
+        return $rol;
     }
 
     function adminView(){
