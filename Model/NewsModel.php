@@ -10,7 +10,6 @@ class NewsModel{
     }
 
 
-
     function viewNoticia($id){
         $sentencia = $this->db->prepare("SELECT * FROM noticias WHERE id_noticia=?");
         $sentencia->execute(array($id));

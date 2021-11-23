@@ -22,8 +22,10 @@ class NewsView{
         $this->smarty->display("templates/seccion.tpl");
     }
 
-    function showNoticia($noticia){
+    function showNoticia($noticia, $idUsuario){
         $this->smarty->assign('noticia', $noticia);
+        $this->smarty->assign('idUsuario', $idUsuario);
+        // $this->smarty->assign('rol', $rol);
         $this->smarty->display("templates/noticia.tpl");
     }
 

@@ -31,6 +31,8 @@ class LoginController{
             session_start();
             $_SESSION['email'] = $userEmail;
             $_SESSION['admin'] = $user->rol;
+            $_SESSION['id_usuario'] = $user->id_usuario;   
+            
             $this->view->showHomeLocation();
             
         }
@@ -48,6 +50,7 @@ class LoginController{
                 session_start();
                 $_SESSION['email'] = $email;
                 $_SESSION['admin'] = $user->rol;
+                $_SESSION['id_usuario'] = $user->id_usuario;   
 
                 $this->view->showHomeLocation();
             

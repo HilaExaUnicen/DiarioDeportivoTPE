@@ -26,6 +26,14 @@ class LoginHelper{
         return $rol;
     }
 
+    function returnUserId(){
+        session_start();
+        if(isset($_SESSION['id_usuario'])){
+            $idUsuario = $_SESSION['id_usuario'];
+            return $idUsuario;
+        }
+    }
+
     function adminView(){
         session_start();
         if($_SESSION['admin'] != 1){
