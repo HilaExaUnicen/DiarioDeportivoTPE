@@ -20,7 +20,7 @@
     <div class="divComentarios">
         <h3>Comentarios</h3>
         
-        {if $idUsuario != 0}
+        {if $rol=="admin" || $rol=="usuario"}
             {include file="commentsForms.tpl"}
         {/if}
         
@@ -29,6 +29,7 @@
                 
             </ul>
         </section>
+        
         <section>
             <a class="botonVolver" href="{BASE_URL}home">Volver</a>
         </section>

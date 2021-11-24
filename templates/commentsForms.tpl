@@ -9,6 +9,6 @@
                     <option value="*****">*****</option>
                 </select>
                 <button id="postearComentario">Postear comentario</button>   |
-                <button id="filtrarComentarios">Filtrar por puntuacion mayor</button>   |
+                <button id="filtrarComentarios">Filtrar por puntuacion mayor</button>
             </form>
         </section>

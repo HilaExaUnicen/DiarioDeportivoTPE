@@ -13,7 +13,6 @@ class ApiCommentsController{
     }
     
     function obtenerComentarios(){
-        //$idNoticia = $params[":ID"];
         $comentarios = $this->model->getComentariosConUsuario();
 
         $this->view->response($comentarios, 200);

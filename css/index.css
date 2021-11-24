@@ -115,3 +115,11 @@ a .botonBorrar{
     flex-wrap:wrap;
 }
 
+#liComentarios{
+    font-size:1.1rem;
+    background-color: rgba(128, 120, 120, 0.555);
+}
+
+.liComentarios{
+    padding: 0.5em;
+}

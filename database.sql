@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2021 a las 17:24:34
+-- Tiempo de generación: 24-11-2021 a las 22:06:25
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -43,27 +43,39 @@ INSERT INTO `comentarios` (`id_comentario`, `comentario`, `puntaje`, `id_noticia
 (44, 'hola', '*', 102, 1),
 (45, 'aaw', '*****', 102, 1),
 (46, 'ADADWWADWAD', '***', 62, 1),
-(47, 'ADWDWWA', '****', 62, 1),
-(48, 'DAWWADWADDWA', '*', 57, 1),
-(49, 'grsdefcesdfce', '*', 57, 1),
-(50, 'feesf', '***', 57, 1),
 (57, 'lol', '*', 62, 1),
 (58, 'lol', '****', 62, 1),
 (59, 'probando', '****', 101, 1),
 (60, 'comment', '**', 101, 1),
-(62, 'aguante chacarita', '*', 103, 41),
-(64, 'asdddd', '*****', 57, 41),
 (65, 'a', '*', 59, 41),
 (66, 'penaldo', '***', 62, 41),
-(67, 'comentario', '**', 57, 44),
 (70, 'el bicho', '*****', 62, 44),
-(71, 'aaaaaaa', '****', 103, 2),
-(73, 'asd', '**', 103, 2),
-(75, 'uuu', '**', 103, 2),
-(79, 'wdwadwad', '***', 62, 44),
 (83, 'awante leonardo meci', '*****', 102, 2),
-(84, 'dwaawdwa', '***', 103, 1),
-(85, 'aaaaa', '****', 103, 1);
+(87, 'xd', '*****', 59, 46),
+(88, 'aaaaaaa', '**', 62, 2),
+(91, 'looool', '*', 101, 1),
+(93, 'dwadwa', '*', 59, 2),
+(94, 'aaaaaa', '***', 59, 46),
+(95, 'aaaa', '*', 59, 46),
+(96, 'aaa', '*', 59, 46),
+(99, 'aaa', '***', 62, 2),
+(100, 'dawd', '***', 62, 2),
+(101, 'a', '*', 101, 2),
+(102, 'vamo', '*****', 111, 41),
+(103, 'aaa', '**', 111, 41),
+(104, 'nice', '****', 111, 46),
+(105, 'aaaaaaaaa', '***', 112, 46),
+(106, 'a', '*****', 114, 46),
+(107, 'comentario prueba', '***', 111, 44),
+(108, 'prueba', '*', 113, 44),
+(109, 'comentario', '***', 114, 44),
+(110, 'probando', '*', 112, 2),
+(111, 'aa', '*****', 112, 2),
+(112, 'con messi', '**', 113, 2),
+(113, 'siuuu', '**', 62, 1),
+(114, 'a', '**', 62, 1),
+(115, 'jaaaaa', '*****', 113, 2),
+(116, 'vamooo', '****', 114, 2);
 
 -- --------------------------------------------------------
 
@@ -84,12 +96,14 @@ CREATE TABLE `noticias` (
 --
 
 INSERT INTO `noticias` (`id_noticia`, `titulo`, `descripcion`, `cuerpo`, `id_seccionfk`) VALUES
-(57, 'De la mano de Messi y De Paul, Argentina armó un show de fútbol y goleó a Uruguay para acercarse al Mundial de Qatar 2022', 'El equipo de Lionel Scaloni lleva 24 partidos invicto e hizo delirar un Monumental con un 50% de aforo habilitado. Fue 3-0.', 'La Selección de Lionel Scaloni, que lleva 24 partidos invicta, armó un show de altísimo nivel contra Uruguay, por la quinta fecha de la Eliminatoria Sudamericana hacia el Mundial de Qatar 2022. En un partido electrizante que hizo delirar al Monumental, con buenas atajadas de Dibu Martínez en el primer tiempo y con mucho fútbol en el mediocampo y en el ataque, la Argentina se impuso por 3-0 con goles de Lionel Messi, Rodrigo De Paul y Lautaro Martínez.', 1),
 (59, 'Alemania se convierte en la primera nación en clasificarse para la Copa Mundial de la FIFA 2022 después del anfitrión Qatar', 'Alemania se convirtió en la primera selección, después del anfitrión Qatar, en clasificar para la Copa Mundial de la FIFA del próximo año con una victoria por 4-0 contra Macedonia del Norte el lunes.', 'El resultado, junto con el fracaso de Armenia para vencer a Rumania, le dio a Alemania, cuatro veces campeona del mundo, un lugar en la Copa del Mundo por vigésima vez; sólo Brasil ha tenido más apariciones con 21. Estamos muy contentos de haber superado la clasificación. Y ahora, obviamente, queremos continuar ganando la Copa del Mundo el próximo año\", dijo Havertz, delantero del Chelsea.  \"Para Alemania, el objetivo principal es siempre levantar la copa\".  El triunfo del lunes fue la séptima victoria de Alemania en esta campaña de clasificación para la Copa del Mundo, con la única derrota co', 37),
 (62, 'Inédito: Cristiano metió dos penales en cinco minutos', 'Ronaldo arrancó con todo ante Luxemburgo. Metió un doblete desde los 12 pasos en un abrir y cerrar de ojos', 'Cristiano Ronaldo es letal -entre varias de sus facetas futbolísticas- desde el punto penal. Generalmente no falla cada vez que le toca posar la pelota en el centro del área y tomar carrera. Este martes lo volvió a hacer y por duplicado. Fue vistiendo la camiseta de Portugal, frente a Luxemburgo por las Eliminatorias Europeas del Mundial de Qatar. El 7 metió dos penales antes de los 13 minutos de partido, para abrir el marcador y ampliar la diferencia.', 37),
 (101, 'Cuáles son las 13 selecciones que ya se clasificaron al Mundial de Qatar', 'La Argentina se sumó este martes tras el empate ante Brasil y una serie de resultados que la acompañaron', 'Naturalmente, el primero en estar confirmado fue el anfitrión, Qatar. A su vez, este martes se completó la Eliminatoria de Europa que entregó ya 10 boletos para Alemania, Bélgica, Croacia, Dinamarca, España, Francia, Inglaterra, Serbia, Suiza y Países Bajos que quedaron líderes de sus grupos.  A su vez, en la UEFA también quedaron definidos los 12 participantes del repechaje. Diez por ser segundos en sus zonas y los otros dos por ser los dos mejores campeones de la clasificación general de la UEFA Nations League 2020/21 que no se hayan clasificado directamente ni hayan quedado segundos en sus ', 37),
 (102, ' Messi: \"Me gustaría terminar este año de la mejor manera posible con el PSG\"', 'El argentino completó el choque contra Brasil y aseguró que está en buenas condiciones y con ganas de enfrentarse al City', 'Messi ha vuelto esta tarde a París tras completar el choque de anoche contra Brasil sin problemas. Como avanzó Scaloni en la antesala, el argentino estaba en condiciones de afrontarlo como titular. No hubo nada que lamentar: “Se ha conseguido el objetivo del pase al Mundial de Qatar. Es sin duda la frutilla del postre en un año muy especial que vivimos con nuestra selección\", ha escrito en su cuenta de Instagram.', 36),
-(103, '¿Con cuántos puntos y cuándo River puede salir campeón?', 'Vuelve la Liga Profesional y en Núñez, con la ilusión a pleno, hacen cuentas. Acá, lo que falta y cómo se puede dar.', 'A cinco fechas para la conclusión y, con 15 puntos en juego, el equipo de Marcelo Gallardo suma 46 unidades, a siete de Talleres, su perseguidor inmediato. Más atrás: Lanús con 35, Vélez y Defensa con 34 y Boca con 33. ¿Cómo puede dar la vuelta olímpica? Sin depender de terceros, River necesita nueve puntos de los 15 que restan. Así, llegaría a 55 y se le haría imposible a la T igualar su línea por más que ganara todo lo restante (alcanzaría las 54 unidades). En caso de empate en el primer puesto, el título se define por una final o mini torneo entre los que sumen la misma cantidad de puntos. ', 1);
+(111, 'Tigre ascendio a Primera Division', 'Con gol de Cristian Zabala derrotó a Barracas Central en la cancha de Banfield y jugará en la máxima categoría.', 'Tigre llegó a la final luego de adjudicarse la zona A con 60 puntos, dejando en el camino en la última fecha a San Martín de Tucumán 2 a 0 y superando tan solo por una unidad a Quilmes y Almirante Brown.  Barracas Central ganó el grupo B con 58 unidades, postergando las ilusiones de Ferro que llegó segundo con 57. En la última jornada del torneo regular, Barracas se impuso por 3 a 1 a Villa Dálmine en Campana.', 1),
+(112, 'Atlético Madrid pone en juego su futuro en Champions League ante el Milan', 'El Colchonero necesita ganar y esperar un traspié del Porto para no correr riesgo en la competencia. Además, Real Madrid realizará una visita peligrosa al sorprendente Sheriff', 'La Champions League entró en etapas decisivas y esta quinta jornada tendrá un componente dramático con equipos de peso que están al borde de la eliminación. Atlético Madrid recibirá al Milan desde las 17 (hora Argentina) con un ojo puesto en lo que sucede al mismo tiempo en Liverpool-Porto.  Con los Reds ya clasificados a la siguiente ronda, el segundo boleto quedará a disposición de Atlético Madrid, Porto o Milan. El equipo italiano es el más complicado y no depende de sus propios resultados, algo que sí tiene sobre su mesa el combinado español.', 36),
+(113, '¿Cómo el Barcelona puede evitar un papelón en la Champions?', 'Si bien el conjunto catalán está en zona de clasificación, la última fecha pinta complicada...', 'Problemas y más problemas. En Cataluña la situación es delicada. Tal es así que el Barcelona está a punto de enfrentarse a una situación crítica, que no veía al club desde hace más de 20 años, cuando en la temporada 2000/2001 de la Champions League quedó eliminada en fase de grupos por última vez en su historia.No queda del todo claro si el empate sin goles de este martes ante el Benfica en el Camp Nou termina siendo un buen resultado para el Barcelona, que a pesar de enfrentar a un cuco en la última fecha, sigue dependiendo de sí mismo para clasificarse a octavos de final de la Champions.', 36),
+(114, 'La Selección Argentina logró la clasificación más anticipada de la historia', 'El conjunto de Lionel Scaloni igualó ante Brasil por la fecha 14 de las Eliminatorias Sudamericanas, pero gracias a la caída de Chile ante Ecuador logró sellar su pase a la Copa del Mundo, en lo que f', 'La Selección Argentina finalizó con saldo positiva otra doble fecha de las Eliminatorias Sudamericanas. El equipo de Lionel Scaloni venció a Uruguay, igualó ante Brasil y, por la derrota de Chile ante Ecuador, selló su pase al Mundial de Qatar 2022 cuando aún restan cuatro fechas y la resolución de la FIFA respecto al clásico ante la Verdeamarela que terminó suspendido tras un escándalo. De esta manera, la Albiceleste consiguió cerrar la clasificación a una Copa del Mundo más temprana en toda su historia.', 1);
 
 -- --------------------------------------------------------
 
@@ -177,13 +191,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id_comentario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `id_noticia` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id_noticia` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT de la tabla `secciones`

@@ -43,7 +43,7 @@ class ApiNewsController{
         }
     }
 
-    function insertarNoticia($params = []){
+    function insertarNoticia(){
         $body = $this->getBody();
 
         $lastId = $this->model->insertNoticia($body->titulo, $body->descripcion, $body->cuerpo, $body->id_seccionfk);

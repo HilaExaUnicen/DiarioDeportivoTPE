@@ -27,15 +27,22 @@ const listaComentarios = document.querySelector("#liComentarios");
 
     
     function mostrarComentariosPorNoticia(comentarios, idNoticia, listaComentarios){
+        let rolUsuario = listaComentarios.getAttribute("data-rol");
         for (const item of comentarios) {
             if(item.id_noticiafk == idNoticia){
-                listaComentarios.innerHTML+= `<li>${item.email} | ${item.comentario} | ${item.puntaje} 
-                                              <button id="${item.id_comentario}">Borrar</button></li>`
+                if(rolUsuario == "admin"){
+                    listaComentarios.innerHTML+= `<li class="liComentarios">${item.email} | ${item.comentario} | ${item.puntaje}
+                                                  <button id="${item.id_comentario}">Borrar</button></li>`
                 
-
-                setTimeout(function(){
-                    eventoDelete(`${item.id_comentario}`);
-                }, 10);
+                    setTimeout(function(){
+                        eventoDelete(`${item.id_comentario}`);
+                    }, 10);
+                }
+                
+                else{
+                    listaComentarios.innerHTML+= `<li class="liComentarios">${item.email} | ${item.comentario} | ${item.puntaje}</li>`
+                }
+            
             }
         }
     }
@@ -65,12 +72,12 @@ const listaComentarios = document.querySelector("#liComentarios");
                 "headers": { "Content-type" : "application/json" },
                 "body": JSON.stringify(nuevoComentario)
             });
+            
             if(resultado.status == 200){
                 getComentarios();
                 listaComentarios.innerHTML = "";
-        
-                }
-            } 
+            }
+        } 
         catch (error) {
             console.log(error);
         }
@@ -102,7 +109,7 @@ const listaComentarios = document.querySelector("#liComentarios");
             });
 
             if(resultado.status == 200){
-                console.log("Eliminado con exito");
+                console.log("Comentario eliminado");
                 getComentarios();
             }
 
@@ -123,9 +130,9 @@ const listaComentarios = document.querySelector("#liComentarios");
             let resultadoFetch = await fetch(`${url}/${idNoticia}`);
             let comentariosFiltrados = await resultadoFetch.json();
 
-        if (resultadoFetch.status == 200){
-            listaComentarios.innerHTML = "";
-            mostrarComentariosPorNoticia(comentariosFiltrados, idNoticia, listaComentarios);
+            if (resultadoFetch.status == 200){
+                listaComentarios.innerHTML = "";
+                mostrarComentariosPorNoticia(comentariosFiltrados, idNoticia, listaComentarios);
             }   
         } 
         catch (error) {
