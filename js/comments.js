@@ -60,17 +60,22 @@ const listaComentarios = document.querySelector("#liComentarios");
             }
     
         try {
-            await fetch(url,{
+            let resultado = await fetch(url,{
                 "method": "POST",
                 "headers": { "Content-type" : "application/json" },
                 "body": JSON.stringify(nuevoComentario)
             });
-        } 
+            if(resultado.status == 200){
+                getComentarios();
+                listaComentarios.innerHTML = "";
+        
+                }
+            } 
         catch (error) {
             console.log(error);
         }
         
-        getComentarios();
+        
         document.querySelector("#inputComentario").value = "";
         
     }
@@ -118,9 +123,10 @@ const listaComentarios = document.querySelector("#liComentarios");
             let resultadoFetch = await fetch(`${url}/${idNoticia}`);
             let comentariosFiltrados = await resultadoFetch.json();
 
+        if (resultadoFetch.status == 200){
             listaComentarios.innerHTML = "";
             mostrarComentariosPorNoticia(comentariosFiltrados, idNoticia, listaComentarios);
-      
+            }   
         } 
         catch (error) {
             console.log(error);
