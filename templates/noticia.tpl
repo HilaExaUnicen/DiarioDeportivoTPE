@@ -21,24 +21,11 @@
         <h3>Comentarios</h3>
         
         {if $idUsuario != 0}
-        <section>
-            <form>
-                <input type="text" id="inputComentario" required>
-                <select id="puntuacion" required>
-                    <option value="*">*</option>
-                    <option value="**">**</option>
-                    <option value="***">***</option>
-                    <option value="****">****</option>
-                    <option value="*****">*****</option>
-                </select>
-                <button id="postearComentario">Postear comentario</button>
-                <button id="borrarComentario">Borrar</button>
-            </form>
-        </section>
+            {include file="commentsForms.tpl"}
         {/if}
         
         <section>
-            <ul id="liComentarios" data-idNoticia="{$noticia->id_noticia}" data-idUsuario="{$idUsuario}">
+            <ul id="liComentarios" data-idNoticia="{$noticia->id_noticia}" data-idUsuario="{$idUsuario}" data-rol="{$rol}">
                 
             </ul>
         </section>

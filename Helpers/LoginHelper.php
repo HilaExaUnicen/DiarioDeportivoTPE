@@ -24,6 +24,7 @@ class LoginHelper{
         }
         
         return $rol;
+        
     }
 
     function returnUserId(){
@@ -42,20 +43,18 @@ class LoginHelper{
         }
         else{
         
-        if(isset($_SESSION['email']) && $_SESSION['admin'] == 1){
-            $log = "admin";
-        }
-        elseif (isset($_SESSION['email']) && ($_SESSION['admin'] != 1)){
-            $log = "usuario";
-        }
-        else{
-            $log = "invitado";
-        }
+            if(isset($_SESSION['email']) && $_SESSION['admin'] == 1){
+                $log = "admin";
+            }
+            elseif (isset($_SESSION['email']) && ($_SESSION['admin'] != 1)){
+                $log = "usuario";
+            }
+            else{
+                $log = "invitado";
+            }
         
             return $log;
-
         }
     }
-
 
 }

@@ -32,8 +32,8 @@ class NewsController{
     function viewNoticia($id){
         $noticia = $this->model->viewNoticia($id);
         $idUsuario = $this->loginHelper->returnUserId();
-        // $rol = $this->loginHelper->checkRole();
-        $this->view->showNoticia($noticia, $idUsuario);
+        $rol = $this->loginHelper->checkRole();
+        $this->view->showNoticia($noticia, $idUsuario,$rol);
     }
 
     function deleteNoticia($idNoticia){

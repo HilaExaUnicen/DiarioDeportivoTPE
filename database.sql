@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2021 a las 14:04:51
+-- Tiempo de generación: 24-11-2021 a las 17:24:34
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -40,12 +40,30 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`id_comentario`, `comentario`, `puntaje`, `id_noticiafk`, `id_usuariofk`) VALUES
-(14, 'comentariooo', '*****', 102, 2),
-(16, 'aguante chacarita', '*', 103, 2),
-(17, 'nuevo comentario', '***', 103, 36),
-(18, 'aaaaaaa', '**', 59, 2),
-(19, 'lasdasddsa', '*****', 102, 2),
-(20, 'hola', '****', 102, 2);
+(44, 'hola', '*', 102, 1),
+(45, 'aaw', '*****', 102, 1),
+(46, 'ADADWWADWAD', '***', 62, 1),
+(47, 'ADWDWWA', '****', 62, 1),
+(48, 'DAWWADWADDWA', '*', 57, 1),
+(49, 'grsdefcesdfce', '*', 57, 1),
+(50, 'feesf', '***', 57, 1),
+(57, 'lol', '*', 62, 1),
+(58, 'lol', '****', 62, 1),
+(59, 'probando', '****', 101, 1),
+(60, 'comment', '**', 101, 1),
+(62, 'aguante chacarita', '*', 103, 41),
+(64, 'asdddd', '*****', 57, 41),
+(65, 'a', '*', 59, 41),
+(66, 'penaldo', '***', 62, 41),
+(67, 'comentario', '**', 57, 44),
+(70, 'el bicho', '*****', 62, 44),
+(71, 'aaaaaaa', '****', 103, 2),
+(73, 'asd', '**', 103, 2),
+(75, 'uuu', '**', 103, 2),
+(79, 'wdwadwad', '***', 62, 44),
+(83, 'awante leonardo meci', '*****', 102, 2),
+(84, 'dwaawdwa', '***', 103, 1),
+(85, 'aaaaa', '****', 103, 1);
 
 -- --------------------------------------------------------
 
@@ -113,7 +131,12 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id_usuario`, `email`, `contraseña`, `rol`) VALUES
 (1, 'admin@gmail.com', '$2y$10$DSLP9yHROdkDIjBUUVervO9VoPLZxv1PALgDnb5t1Nf1MQ9HDfUMq', 1),
 (2, 'usuario@gmail.com', '$2y$10$c1qZ/FlFMYnTQ620odeABuL3rT1LHhomYjNNYN5wIwtBpDLQroKFW', 0),
-(36, 'lolencio@gmail.com', '$2y$10$pNbenWi1mboselMSY5zDR.tjpM0O2gAhX4hvltBD2LqiYunNOfQRq', 0);
+(36, 'lolencio@gmail.com', '$2y$10$pNbenWi1mboselMSY5zDR.tjpM0O2gAhX4hvltBD2LqiYunNOfQRq', 0),
+(41, 'usuario3@gmail.com', '$2y$10$wQLmDVL8eQQuHpJkjd12yeCqBp0GFSyEFmfjCL6r.Opfi4q9fyrkG', 0),
+(43, 'asdasad@gmail.com', '$2y$10$ldERlHvYkCm25b7SYWDIy.rhLCMCxpgcTwdesNcdTTBO/ocNeRbBq', 0),
+(44, 'hilario@gmail.com', '$2y$10$2Y6kGYSWRPcPJhdddgFsjexQf09kA646YopKGsBoVc9WX84AA1Jha', 0),
+(45, 'matias@gmail.com', '$2y$10$CW4LbGtJSzWuqEfKoTGqkOCI2QROorUQARxvgDYCwqMtsP/mMTUwu', 0),
+(46, 'user00@gmail.com', '$2y$10$m.Q4e3ODbaSALYqQ3p.sI.xh6yGDVEp3fb.VoNnOuEHlxFXDJgafq', 0);
 
 --
 -- Índices para tablas volcadas
@@ -154,25 +177,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_comentario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `id_noticia` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `id_noticia` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT de la tabla `secciones`
 --
 ALTER TABLE `secciones`
-  MODIFY `id_seccion` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id_seccion` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_usuario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Restricciones para tablas volcadas

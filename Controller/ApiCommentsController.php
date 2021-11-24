@@ -18,7 +18,19 @@ class ApiCommentsController{
 
         $this->view->response($comentarios, 200);
     }
-    
+
+    function filtrarComentariosPorPuntaje($params = []){
+        $idNoticia = $params[":ID"];
+        $comentariosFiltrados = $this->model->getComentariosMayorAMenor($idNoticia);
+
+        if($idNoticia){
+            $this->view->response($comentariosFiltrados, 200);
+        }
+        else{
+            $this->view->response("La noticia no existe", 404);
+        }
+    }
+
     
     function eliminarComentario($params = []){
         $idComentario = $params[":ID"];

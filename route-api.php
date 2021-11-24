@@ -14,6 +14,8 @@ $router->addRoute('noticias/:ID', 'PUT', 'ApiNewsController', 'actualizarNoticia
 // $router->addRoute('comentarios/:ID', 'GET', 'ApiCommentsController', 'obtenerComentario');
 
 $router->addRoute('comentarios', 'GET', 'ApiCommentsController', 'obtenerComentarios');
+$router->addRoute('comentarios/:ID', 'GET', 'ApiCommentsController', 'filtrarComentariosPorPuntaje');
+// $router->addRoute('comentarios/:ID1/:ID2', 'GET', 'ApiCommentsController', 'filtrarComentariosPorEstrellas');
 $router->addRoute('comentarios/:ID', 'DELETE', 'ApiCommentsController', 'eliminarComentario');
 $router->addRoute('comentarios', 'POST', 'ApiCommentsController', 'insertarComentario');
 

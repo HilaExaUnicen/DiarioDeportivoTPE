@@ -20,6 +20,13 @@ class CommentsModel{
         $comentario = $sentencia->fetch(PDO::FETCH_OBJ);
         return $comentario;
     }
+
+    public function getComentariosMayorAMenor($idNoticia){
+        $sentencia = $this->db->prepare("SELECT * FROM comentarios JOIN usuarios ON comentarios.id_usuariofk = usuarios.id_usuario WHERE id_noticiafk = ? ORDER BY puntaje DESC");
+        $sentencia->execute(array($idNoticia));
+        $comentariosFiltrados = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $comentariosFiltrados;
+    }
     
     public function eliminarComentario($idComentario){
         $sentencia = $this->db->prepare("DELETE FROM comentarios WHERE id_comentario = ?");
